@@ -1,38 +1,224 @@
-.App {
+h1,
+h2,
+h3,
+p,
+a {
+  color: white;
+  text-align: center;
+}
+button {
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgb(214, 91, 166);
+  background: linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(195, 111, 220, 1) 91%
+  );
+  height: 20px;
+  width: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-header h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+.intro-copy {
+  background: #4b5395;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.intro-copy p {
+  font-size: 1rem;
+  text-align: left;
+}
+.quiz-btn {
+  background: rgb(214, 91, 166);
+  background: linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(195, 111, 220, 1) 91%
+  );
+  border: 0;
+  padding: 15px 40px;
+  margin: 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.Question-1 {
+  padding-bottom: 20px;
+}
+
+.Question-btn {
+  background: white;
+  padding: 15px 40px;
+  margin: 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: #383d6e;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  width: 90%;
+  border: 0;
+}
+
+.Question-btn:active,
+.Question-btn-selected {
+  background: rgb(214, 91, 166);
+  background: linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(108, 207, 246, 1) 91%
+  );
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.next-btn {
+  background: rgb(214, 91, 166);
+  background: linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(195, 111, 220, 1) 91%
+  );
+  padding: 10px 30px;
+  margin: 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dosha-info p {
+  text-align: left;
+}
+
+.dosha-title {
+font-size: 3rem;
+margin-top: 0;
+margin-bottom: 20px;
+  background: -webkit-linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(108, 207, 246, 1) 91%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dosha-info h2 {
+  margin-top: 30px;
+}
+.dosha-info {
+   background: #4b5395;
+  margin: 20px;
+  padding: 20px 50px;
+  border-radius: 24px;
+  box-shadow: 0px 0px 37px -2px rgba(195,111,220,0.89);
+}
+
+.dosha-info ul {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  color: white;
+}
+
+.dosha-info li {
+  padding-bottom: 13px;
+}
+.dosha-btns {
+  text-align: center;
+}
+
+.dosha-btn {
+  background: rgb(214, 91, 166);
+  background: linear-gradient(
+    198deg,
+    rgba(214, 91, 166, 1) 19%,
+    rgba(195, 111, 220, 1) 91%
+  );
+  padding: 10px 30px;
+  margin: 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: 0;
+}
+
+.history {
+  display: grid;
+  justify-content: center;
+}
+
+.prevQ {
+  width: 400px;
+  background-color: #48c94e;
+  border-radius: 50px;
+  padding: 0.3rem;
+}
+
+.ans-div {
+  width: 100vh;
+  display: flex;
+  justify-content: right;
+}
+
+.prevA {
+  background-color: #7c3a04;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 0.3rem 1rem;
+}
+
+.prevA:hover .btn--edit{
+  opacity: 1;
+}
+
+.btn--edit {
+  color: white;
+  position: absolute;
+  right: 1rem;
+  opacity: 0;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Question-btn {
+    width: 100%;
   }
 }
