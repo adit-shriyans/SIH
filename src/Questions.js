@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import "./App.css";
 
 function Questions(props) {
@@ -167,49 +170,33 @@ function Questions(props) {
   let [history, setHistory] = useState([]);
   let [editModes, setEditModes] = useState(new Array(quizQuestions.length).fill(false)); // State variable to track edit mode for each question
   const [answers, setAnswers] = useState([]);
-  // Define quizQuestions here
-  // const quizQuestions = [
-  //   {
-  //     id: 0,
-  //     question: "How would you describe your body type and how you look",
-  //     // ...
-  //   },
-  //   {
-  //     id: 1,
-  //     question: "How would you best describe your metabolism",
-  //     // ...
-  //   },
-  //   // ... (other questions)
-  // ];
+  const [inputs, setNewAns] = useState([]);
+  const [input, setInput] = useState("");
 
   useEffect(() => {
-    if (selected !== null) {
+      console.log("OK");
+      console.log(inputs);
+      console.log(answers);
       nextClick();
-    }
-  }, [selected]);
+  }, [inputs, answers]);
 
   useEffect(() => {
     props.setResults(answers);
   }, [answers]);
 
   function nextClick() {
-    if (selected === null) {
-      return;
-    }
-    if (id + 1 > quizQuestions.length - 1) {
+    if (answers.length >= quizQuestions.length ) {
       props.setAppState("result");
       props.setResults(history);
       return;
     }
+    if(answers.length===0) return;
+    if(input==="") return;
 
     setHistory([...history, { id, selected }]);
     setSelected(null);
-    setId(id + 1);
-  }
-
-  function handleClick(option) {
-    setSelected(option.value);
-    setAnswers([...answers, option.value]);
+    setId(id+1);
+    setInput("");
   }
 
   const reAnswer = (questionId) => {
@@ -218,11 +205,17 @@ function Questions(props) {
     setEditModes(newEditModes);
   };
 
-  function editAnswer(option, id) {
+  function editAnswer(input, id) {
     const newEditModes = [...editModes];
-    answers[id]=option.value;
+    answers[id]=input;
     newEditModes[id] = false;
     setEditModes(newEditModes);
+    setInput("");
+  }
+
+  function getOptions(newAns) {
+    setInput([...inputs, newAns]);
+    setAnswers([...answers, newAns]);
   }
 
   let currentQuestion = quizQuestions.find((item) => item.id === id);
@@ -237,43 +230,30 @@ function Questions(props) {
             </p>
             <div className="ans-div">
               {editModes[item.id] ? (
-                // Display options for editing the answer
-                quizQuestions[item.id].options.map((option, index) => (
-                  <button
-                    key={index}
-                    className={
-                      selected === option.value
-                        ? "Question-btn-selected Question-btn"
-                        : "Question-btn"
-                    }
-                    onClick={() => editAnswer(option, item.id)}
-                  >
-                    {option.label}
-                  </button>
-                ))
+                <ValidatorForm onSubmit={() => editAnswer(input, item.id)}>
+                <TextValidator
+                  className="textfield" 
+                  label="Standard" 
+                  onChange={(evt) => setInput(evt.target.value)}
+                  validators={['required']}
+                  errorMessages={['this field is required']}
+                  value={input}
+                />
+                <Button variant="contained" type="submit" color="success">
+                  Submit response
+                </Button>
+                </ValidatorForm>
               ) : (
-                // Display the previous answer and Edit icon
                 <>
                   <p className="prevA">
                     {
-                      quizQuestions[item.id].options.find(
-                        (option) => option.value === item.selected
-                      ).label
+                      answers[item.id]
                     }
                     <EditNoteIcon
                       className="btn--edit"
                       onClick={() => reAnswer(item.id)}
                     />
                   </p>
-                  {/* Optionally, show a Submit button when in edit mode */}
-                  {/* {editModes[item.id] && (
-                    <button
-                      className="submit-btn"
-                      onClick={() => submitEditedAnswer(item.id)}
-                    >
-                      Submit
-                    </button>
-                  )} */}
                 </>
               )}
             </div>
@@ -289,19 +269,19 @@ function Questions(props) {
         <section className="Question-btns">
           <h3 className="Question-1">{currentQuestion.question}</h3>
           <div>
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                className={
-                  selected === option.value
-                    ? "Question-btn-selected Question-btn"
-                    : "Question-btn"
-                }
-                onClick={() => handleClick(option)}
-              >
-                {option.label}
-              </button>
-            ))}
+            <ValidatorForm onSubmit={() => getOptions(input)}>
+              <TextValidator
+                className="textfield" 
+                label="Standard" 
+                onChange={(evt) => setInput(evt.target.value)}
+                validators={['required']}
+                errorMessages={['this field is required']}
+                value={input}
+              />
+              <Button variant="contained" type="submit" color="success">
+                Submit response
+              </Button>
+            </ValidatorForm>
           </div>
         </section>
       </div>

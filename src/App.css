@@ -195,6 +195,7 @@ margin-bottom: 20px;
   width: 400px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 50px;
   padding: 0.3rem 1rem;
 }
@@ -205,9 +206,18 @@ margin-bottom: 20px;
 
 .btn--edit {
   color: white;
-  position: absolute;
-  right: 1rem;
+  position: relative;
+  right: 0;
   opacity: 0;
+}
+
+.textfield {
+  color: white;
+  width: 100%;
+}
+
+.Question-1 {
+  width: 530px;
 }
 
 @media (min-width: 992px) {
