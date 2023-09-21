@@ -11,12 +11,18 @@ button {
   text-align: center;
 }
 
+.Questions {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .App-header {
   background: rgb(214, 91, 166);
   background: linear-gradient(
     198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(195, 111, 220, 1) 91%
+    #fbc16a 19%,
+    #ffebcd 91%
   );
   height: 20px;
   width: auto;
@@ -179,7 +185,7 @@ margin-bottom: 20px;
 
 .prevQ {
   width: 400px;
-  background-color: #48c94e;
+  background-color: #8db600;
   border-radius: 50px;
   padding: 0.3rem;
 }
@@ -191,7 +197,7 @@ margin-bottom: 20px;
 }
 
 .prevA {
-  background-color: #7c3a04;
+  background-color: #f4c430;
   width: 400px;
   display: flex;
   align-items: center;
@@ -208,7 +214,8 @@ margin-bottom: 20px;
   color: white;
   position: relative;
   right: 0;
-  opacity: 0;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .textfield {
@@ -218,6 +225,20 @@ margin-bottom: 20px;
 
 .Question-1 {
   width: 530px;
+}
+
+.smol {
+  width: 800px;
+    background-color: #e0872e;
+    padding-bottom: 24.5px;
+}
+
+.heading {
+  color: white;
+  font-size: larger;
+  letter-spacing: 0.2rem;
+  padding-left: 1rem;
+  font-weight: 600;
 }
 
 @media (min-width: 992px) {

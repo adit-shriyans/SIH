@@ -222,6 +222,8 @@ function Questions(props) {
 
   return (
     <div className="Questions">
+      <div className="smol">
+        <div className="heading">PRAKRITI CHATBOT</div>
       <section className="history">
         {history.map((item, index) => (
           <div key={index} className="history-item">
@@ -278,12 +280,13 @@ function Questions(props) {
                 errorMessages={['this field is required']}
                 value={input}
               />
-              <Button variant="contained" type="submit" color="success">
+              <Button className="btn--submit" variant="contained" type="submit" color="success">
                 Submit response
               </Button>
             </ValidatorForm>
           </div>
         </section>
+      </div>
       </div>
     </div>
   );
