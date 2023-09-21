@@ -2,7 +2,7 @@ import "./App.css";
 import  { useState, useEffect } from "react";
 import Welcome from "./Welcome";
 import Questions from "./Questions";
-import Result from "./Result"
+import Result from "./Result";
 
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
     {output}
     </div>
   );

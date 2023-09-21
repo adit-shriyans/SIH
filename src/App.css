@@ -11,10 +11,18 @@ button {
   text-align: center;
 }
 
+.App {
+  background: url("../photos/bg5.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .Questions {
   display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    overflow: auto;
 }
 
 .App-header {
@@ -227,10 +235,17 @@ margin-bottom: 20px;
   width: 530px;
 }
 
-.smol {
+.Questions {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.question-container {
   width: 800px;
-    background-color: #e0872e;
-    padding-bottom: 24.5px;
+  display: flex;
+  position: relative;
+  bottom: 0;
 }
 
 .heading {
