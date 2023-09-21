@@ -1,0 +1,12 @@
+.Navbar{
+    background-color: #94C3B0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+.logoImg{
+    width:80px;
+    height:80px;
+    border-radius: 25%;
+}
