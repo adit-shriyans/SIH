@@ -85,7 +85,7 @@ button {
 }
 
 .Question-btn {
-  background: white;
+  background: #E4E4D0;
   padding: 15px 40px;
   margin: 20px;
   border-radius: 24px;
@@ -287,4 +287,11 @@ margin-bottom: 20px;
   src: url('./assets/samarkan/SAMAN___.TTF') format('truetype'); /* Adjust the path as needed */
   font-weight: normal;
   font-style: normal;
+}
+
+.Question-1{
+  color:black;
+  background-color: white;
+  border-radius:24px;
+  padding:5%;
 }
