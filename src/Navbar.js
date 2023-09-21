@@ -4,8 +4,11 @@ import logo from "./assets/logoNew.png"
 const Navbar = () => {
   return (
     <div className='Navbar'>
-        <img src={logo} className="logoImg" />
-        <h1 className="title">Prakriti App</h1>
+        <div className="teamLogo">
+            <img src={logo} className="logoImg" />
+            <h1 className='title teamTitle' id='teamTitle'>AyurDevs</h1> 
+        </div>
+        <h1 id="ProjectTitle"className="title">Prakriti App</h1>
     </div>
   )
 }

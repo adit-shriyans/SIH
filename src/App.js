@@ -3,6 +3,7 @@ import  { useState, useEffect } from "react";
 import Welcome from "./Welcome";
 import Questions from "./Questions";
 import Result from "./Result";
+import Navbar from "./Navbar"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
     {output}
     </div>
   );

@@ -65,15 +65,21 @@ function Questions(props) {
 
   function editAnswer(option, id) {
     const newEditModes = [...editModes];
-    answers[id]=option.value;
+    const newAnswers = [...answers];
+    newAnswers[id] = option.value;
+    console.log(answers);
+    console.log(newAnswers);
+    // answers[id]=option.value;
     newEditModes[id] = false;
     setEditModes(newEditModes);
+    setAnswers(newAnswers)
   }
 
   let currentQuestion = quizQuestions.find((item) => item.id === id);
 
   return (
     <div className="Questions">
+      <div className="question-container">
       <section className="history">
         {history.map((item, index) => (
           <div key={index} className="history-item">
@@ -126,11 +132,6 @@ function Questions(props) {
         ))}
       </section>
       <div className="container">
-        <section className="question-number">
-          <p>
-            Question {id + 1} of {quizQuestions.length}
-          </p>
-        </section>
         <section className="Question-btns">
           <h3 className="Question-1">{currentQuestion.question}</h3>
           <div>
@@ -149,6 +150,7 @@ function Questions(props) {
             ))}
           </div>
         </section>
+      </div>
       </div>
     </div>
   );

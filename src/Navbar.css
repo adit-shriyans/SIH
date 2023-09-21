@@ -10,3 +10,16 @@
     height:80px;
     border-radius: 25%;
 }
+
+.title{
+        font-family: 'Samarkan', sans-serif;     
+}
+
+.teamLogo{
+    display: flex;
+    justify-content: center;
+}
+
+.teamTitle{
+    margin:10%
+}

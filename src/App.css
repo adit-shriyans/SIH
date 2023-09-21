@@ -12,18 +12,19 @@ button {
 }
 
 .App {
+  height: 100vh;
   background: url("../photos/bg5.avif");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.Questions {
+/* .Questions {
   display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: auto;
-}
+} */
 
 .App-header {
   background: rgb(214, 91, 166);
@@ -239,13 +240,14 @@ margin-bottom: 20px;
   height: 100vh;
   display: flex;
   align-items: flex-end;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .question-container {
   width: 800px;
-  display: flex;
-  position: relative;
-  bottom: 0;
 }
 
 .heading {
@@ -267,4 +269,11 @@ margin-bottom: 20px;
   .Question-btn {
     width: 100%;
   }
+}
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('./assets/samarkan/SAMAN___.TTF') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
 }
