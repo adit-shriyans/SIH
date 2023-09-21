@@ -3,6 +3,8 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import TextField from '@mui/material/TextField';
 import QuestionSet from "./QuestionSet";
 import "./App.css";
+import logo from "./assets/logoNew.png";
+import "./Questions.css"
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -133,7 +135,10 @@ function Questions(props) {
       </section>
       <div className="container">
         <section className="Question-btns">
+        <div className="QuestionWithImg">
+          <img src={logo} className="logo"></img>        
           <h3 className="Question-1">{currentQuestion.question}</h3>
+        </div>
           <div>
             {currentQuestion.options.map((option, index) => (
               <button
