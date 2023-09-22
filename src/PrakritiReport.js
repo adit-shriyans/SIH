@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar'
 import "./PrakritiReport.css"
+import PrakritiBorder from "./assets/dec.png"
+import Details from './constants/Details';
 
 const PrakritiReport = () => {
   return (
@@ -8,20 +10,23 @@ const PrakritiReport = () => {
         <Navbar />
         <section className='Report'>
             <div className='PrakritiContainer'>
-                 <h2 className='PrakritiName'>Vata</h2>
+                 <img src={PrakritiBorder} className='PrakritiBorder'></img>   
+                 <h1 className='PrakritiName'>Vata</h1>
             </div>
             <div className='Report-details-div'>
                 <p className='Report-details-text'>
-                    hello,this is text.
+                    Hi I am Text.
                 </p>
             </div>
             <div className='Recommendation-div'>
-                <h1 className='Recommendation-heading'>Recommendation</h1>
-                <button className='Diet-btn'>Diet Plannig</button>
-                <button className='Life-btn'>Lifestyle Planning</button>
+                <h1 className='Recommendation-heading'>Recommendations:</h1>
+                <div className='Plans'>
+                    <button className='Diet-btn btn'>Diet Plannig</button>
+                    <button className='Life-btn btn'>Lifestyle Planning</button>
+                </div>
                 <input 
                 type="text" 
-                placeholder="type what you want to know!" 
+                placeholder="Type what you want to know!" 
                 className='recommendation-input'
                 >
                 </input>

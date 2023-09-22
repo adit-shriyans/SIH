@@ -1,13 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Handlee&family=Poppins:wght@200&display=swap');
+
+.Report{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .Report-details-text{
     color:black;
 }
 
-.PrakritiName{
-    color:black;
+.PrakritiContainer{
+    position: relative; /* or position: absolute; */
+    width: 100%; /* Set the width and height as needed */
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
-.PrakritiContainer{
-    background-image: "prakriti";
+.PrakritiBorder{
+    width: 18%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .PrakritiBorder{
+        width:25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .PrakritiBorder{
+        width:40%;
+    }
+}
+
+.PrakritiName{
+    color:#648469;
+    font-family: Cinzel Decorative;
+    font-size:xxx-large;
+    position: absolute;
+    top: 50%; /* Adjust as needed to position the heading */
+    left: 50%; /* Adjust as needed to position the heading */
+    transform: translate(-50%, -100%);
+    padding: 10px; /* Adjust padding as needed */
+    z-index: 1; /* Place the heading above the image */
 }
 
 .Recommendation-div{
@@ -24,4 +62,35 @@
 
 .Recommendation-heading{
     color:black;
+}
+
+.Report-details-div{
+    padding: 1%;
+    height: auto;
+    width: auto;
+    border: 1px solid #94C3B0;
+    border-radius: 10%;
+    background-color: #DEF5E5;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.Recommendation-heading{
+    font-weight: bold;
+    color:#648469;
+    display: flex;
+    justify-self:flex-start;
+    font-size: xx-large;
+}
+
+.btn{
+    color:#89746C;
+    background-color: #FAF3F0;
+    border:1px solid #CDC1BB;
+    border-radius: 10%;
+}
+
+.recommendation-input{
+    width:20vw;
+    color:#B4B3B3;
 }
