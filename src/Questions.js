@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import QuestionSet from "./constants/questionSetPrompt";
 import logo from "./assets/logoNew.png";
 import "./App.css";
-import "./Questions.css"
+import "./Questions.css";
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -94,20 +94,6 @@ function Questions(props) {
             </p>
             <div className="ans-div">
               {editModes[item.id] ? (
-                
-                // quizQuestions[item.id].options.map((option, index) => (
-                //   <button
-                //     key={index}
-                //     className={
-                //       selected === option.value
-                //         ? "Question-btn-selected Question-btn"
-                //         : "Question-btn"
-                //     }
-                //     onClick={() => editAnswer(option, item.id)}
-                //   >
-                //     {option.label}
-                //   </button>
-                // ))
                 <>
                 <button className="Question-btn" onClick={() => editAnswer(true, item.id)}>
                   YES
@@ -117,13 +103,9 @@ function Questions(props) {
                 </button>
                 </>
               ) : (
-                // Display the previous answer and Edit icon
                 <>
                   <p className="prevA">
                     {
-                      // quizQuestions[item.id].options.find(
-                      //   (option) => option === item.selected
-                      // ).label
                       answers[item.id]?"YES":"NO"
                     }
                     <EditNoteIcon
@@ -131,15 +113,6 @@ function Questions(props) {
                       onClick={() => reAnswer(item.id)}
                     />
                   </p>
-                  {/* Optionally, show a Submit button when in edit mode */}
-                  {/* {editModes[item.id] && (
-                    <button
-                      className="submit-btn"
-                      onClick={() => submitEditedAnswer(item.id)}
-                    >
-                      Submit
-                    </button>
-                  )} */}
                 </>
               )}
             </div>
