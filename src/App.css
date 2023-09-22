@@ -177,12 +177,13 @@ button {
 }
 
 .history {
-  display: grid;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .history {
-  max-height: 60vh;
+  /* max-height: 60vh; */
   overflow-y: auto;
   width: 100%; 
   height: calc(100vh - 440px);
@@ -232,14 +233,13 @@ button {
 
 .Question-1 {
   width: 530px;
-  height: 2rem;
   color: black;
   display: flex;
   align-items: center;
   background-color: #fff;
   border-radius: 20px;
   border: 1px solid black;
-  padding: 0 5px;
+  padding: 0.25rem 5px;
 }
 
 .Questions {

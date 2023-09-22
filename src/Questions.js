@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import TextField from '@mui/material/TextField';
 import QuestionSet from "./QuestionSet";
@@ -14,6 +14,7 @@ function Questions(props) {
   let [history, setHistory] = useState([]);
   let [editModes, setEditModes] = useState(new Array(quizQuestions.length).fill(false)); // State variable to track edit mode for each question
   const [answers, setAnswers] = useState([]);
+
   useEffect(() => {
     if (selected !== null) {
       nextClick();
@@ -23,6 +24,19 @@ function Questions(props) {
   useEffect(() => {
     props.setResults(answers);
   }, [answers]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [history]);
+
+  const scrollableRef = useRef(null);
+
+  // Function to scroll to the bottom of the scrollable element
+  const scrollToBottom = () => {
+    if (scrollableRef.current) {
+      scrollableRef.current.scrollTop = scrollableRef.current.scrollHeight;
+    }
+  };
 
   function nextClick() {
     if (selected === null) {
@@ -67,7 +81,7 @@ function Questions(props) {
   return (
     <div className="Questions">
       <div className="question-container">
-      <section className="history">
+      <section className="history" ref={scrollableRef}>
         {history.map((item, index) => (
           <div key={index} className="history-item">
             <p className="prevQ">
