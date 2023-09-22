@@ -189,12 +189,19 @@ button {
   height: calc(100vh - 440px);
 }
 
+.history-item{
+  display: flex;
+  justify-content: flex-start;
+
+}
+
 .prevQ {
   color: black;
   width: 400px;
   background-color: #fff;
   border-radius: 50px;
   padding: 0.3rem;
+  align-self: flex-start;
 }
 
 .ans-div {
@@ -212,6 +219,8 @@ button {
   justify-content: space-between;
   border-radius: 50px;
   padding: 0.3rem 1rem;
+  align-self: flex-end;
+  margin-top: 10%;
 }
 
 .prevA:hover .btn--edit {
