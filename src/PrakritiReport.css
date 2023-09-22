@@ -1,0 +1,27 @@
+.Report-details-text{
+    color:black;
+}
+
+.PrakritiName{
+    color:black;
+}
+
+.PrakritiContainer{
+    background-image: "prakriti";
+}
+
+.Recommendation-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Diet-btn, .Life-btn, .recommendation-input {
+    margin: 5px; /* Add some spacing between elements */
+    padding: 10px; /* Add padding to buttons and input */
+}
+
+.Recommendation-heading{
+    color:black;
+}
