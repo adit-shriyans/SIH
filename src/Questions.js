@@ -12,21 +12,6 @@ function Questions(props) {
   let [history, setHistory] = useState([]);
   let [editModes, setEditModes] = useState(new Array(quizQuestions.length).fill(false)); // State variable to track edit mode for each question
   const [answers, setAnswers] = useState([]);
-  // Define quizQuestions here
-  // const quizQuestions = [
-  //   {
-  //     id: 0,
-  //     question: "How would you describe your body type and how you look",
-  //     // ...
-  //   },
-  //   {
-  //     id: 1,
-  //     question: "How would you best describe your metabolism",
-  //     // ...
-  //   },
-  //   // ... (other questions)
-  // ];
-
   useEffect(() => {
     if (selected !== null) {
       nextClick();
