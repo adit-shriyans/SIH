@@ -134,7 +134,7 @@ function Questions(props) {
       <div className="container">
         <section className="Question-btns">
           <h3 className="Question-1">{currentQuestion.question}</h3>
-          <div>
+          <div className="option-buttons">
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}

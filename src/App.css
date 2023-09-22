@@ -6,6 +6,7 @@ a {
   color: white;
   text-align: center;
 }
+
 button {
   cursor: pointer;
   text-align: center;
@@ -28,11 +29,9 @@ button {
 
 .App-header {
   background: rgb(214, 91, 166);
-  background: linear-gradient(
-    198deg,
-    #fbc16a 19%,
-    #ffebcd 91%
-  );
+  background: linear-gradient(198deg,
+      #fbc16a 19%,
+      #ffebcd 91%);
   height: 20px;
   width: auto;
 }
@@ -41,15 +40,16 @@ button {
   margin: 0 auto;
   padding-top: 20px;
   width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-header h1 {
   text-align: center;
   font-size: 2rem;
 }
+
 .intro-copy {
   background: #4b5395;
   margin: 20px;
@@ -61,13 +61,12 @@ button {
   font-size: 1rem;
   text-align: left;
 }
+
 .quiz-btn {
   background: rgb(214, 91, 166);
-  background: linear-gradient(
-    198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(195, 111, 220, 1) 91%
-  );
+  background: linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(195, 111, 220, 1) 91%);
   border: 0;
   padding: 15px 40px;
   margin: 20px;
@@ -101,21 +100,17 @@ button {
 .Question-btn:active,
 .Question-btn-selected {
   background: rgb(214, 91, 166);
-  background: linear-gradient(
-    198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(108, 207, 246, 1) 91%
-  );
+  background: linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(108, 207, 246, 1) 91%);
   color: white;
 }
 
 .next-btn {
   background: rgb(214, 91, 166);
-  background: linear-gradient(
-    198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(195, 111, 220, 1) 91%
-  );
+  background: linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(195, 111, 220, 1) 91%);
   padding: 10px 30px;
   margin: 20px;
   border-radius: 24px;
@@ -132,14 +127,12 @@ button {
 }
 
 .dosha-title {
-font-size: 3rem;
-margin-top: 0;
-margin-bottom: 20px;
-  background: -webkit-linear-gradient(
-    198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(108, 207, 246, 1) 91%
-  );
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(108, 207, 246, 1) 91%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -147,12 +140,13 @@ margin-bottom: 20px;
 .dosha-info h2 {
   margin-top: 30px;
 }
+
 .dosha-info {
-   background: #4b5395;
+  background: #4b5395;
   margin: 20px;
   padding: 20px 50px;
   border-radius: 24px;
-  box-shadow: 0px 0px 37px -2px rgba(195,111,220,0.89);
+  box-shadow: 0px 0px 37px -2px rgba(195, 111, 220, 0.89);
 }
 
 .dosha-info ul {
@@ -165,17 +159,16 @@ margin-bottom: 20px;
 .dosha-info li {
   padding-bottom: 13px;
 }
+
 .dosha-btns {
   text-align: center;
 }
 
 .dosha-btn {
   background: rgb(214, 91, 166);
-  background: linear-gradient(
-    198deg,
-    rgba(214, 91, 166, 1) 19%,
-    rgba(195, 111, 220, 1) 91%
-  );
+  background: linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(195, 111, 220, 1) 91%);
   padding: 10px 30px;
   margin: 20px;
   border-radius: 24px;
@@ -190,6 +183,13 @@ margin-bottom: 20px;
 .history {
   display: grid;
   justify-content: center;
+}
+
+.history {
+  max-height: 60vh;
+  overflow-y: auto;
+  width: 100%; 
+  height: calc(100vh - 440px);
 }
 
 .prevQ {
@@ -215,7 +215,7 @@ margin-bottom: 20px;
   padding: 0.3rem 1rem;
 }
 
-.prevA:hover .btn--edit{
+.prevA:hover .btn--edit {
   opacity: 1;
 }
 
@@ -237,17 +237,17 @@ margin-bottom: 20px;
 }
 
 .Questions {
-  height: 100vh;
+  height: calc(100vh - 82.25px);
   display: flex;
-  align-items: flex-end;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
 }
 
 .question-container {
-  width: 800px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column; 
 }
 
 .heading {
@@ -256,6 +256,10 @@ margin-bottom: 20px;
   letter-spacing: 0.2rem;
   padding-left: 1rem;
   font-weight: 600;
+}
+
+.option-buttons {
+  position: inherit;
 }
 
 @media (min-width: 992px) {
@@ -273,7 +277,8 @@ margin-bottom: 20px;
 
 @font-face {
   font-family: 'Samarkan';
-  src: url('./assets/samarkan/SAMAN___.TTF') format('truetype'); /* Adjust the path as needed */
+  src: url('./assets/samarkan/SAMAN___.TTF') format('truetype');
+  /* Adjust the path as needed */
   font-weight: normal;
   font-style: normal;
 }
