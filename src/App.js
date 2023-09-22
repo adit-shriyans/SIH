@@ -3,6 +3,7 @@ import  { useState, useEffect } from "react";
 import Welcome from "./Welcome";
 import Questions from "./Questions";
 import Result from "./Result";
+import PrakritiReport from "./PrakritiReport";
 import Navbar from "./Navbar"
 
 
@@ -16,7 +17,7 @@ function App() {
   } else if (appState === "questions") {
     output = <Questions setAppState={setAppState} setResults={setResults}/>;
   } else {
-    output = <Result results={results} />
+    output = <PrakritiReport />
   }
 
   return (

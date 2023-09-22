@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import QuestionSet from "./constants/questionSetPrompt";
 import logo from "./assets/logoNew.png";
 import "./App.css";
-import "./Questions.css";
+import "./Questions.css"
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -48,15 +48,14 @@ function Questions(props) {
       return;
     }
 
-    console.log(answers);
     setHistory([...history, { id, selected }]);
     setSelected(null);
     setId(id + 1);
   }
 
   function handleClick(option) {
-    setSelected(option?"YES":"NO");
-    setAnswers([...answers, option]);
+    setSelected(option.value);
+    setAnswers([...answers, option.value]);
   }
 
   const reAnswer = (questionId) => {
@@ -69,12 +68,8 @@ function Questions(props) {
     const newEditModes = [...editModes];
     const newAnswers = [...answers];
     const newHistory = [...history];
-    newAnswers[id] = option;
-    newHistory[id] = {id:id, selected: newAnswers[id]?"YES":"NO" }
-    console.log(answers);
-    console.log(newAnswers);
-    console.log(newHistory);
-    // answers[id]=option.value;
+    newAnswers[id] = option.value;
+    newHistory[id] = {id: id, selected: newAnswers[id]};
     newEditModes[id] = false;
     setEditModes(newEditModes);
     setAnswers(newAnswers);
@@ -94,25 +89,43 @@ function Questions(props) {
             </p>
             <div className="ans-div">
               {editModes[item.id] ? (
-                <>
-                <button className="Question-btn" onClick={() => editAnswer(true, item.id)}>
-                  YES
-                </button>
-                <button className="Question-btn" onClick={() => editAnswer(false, item.id)}>
-                  NO
-                </button>
-                </>
+                // Display options for editing the answer
+                quizQuestions[item.id].options.map((option, index) => (
+                  <button
+                    key={index}
+                    className={
+                      selected === option.value
+                        ? "Question-btn-selected Question-btn"
+                        : "Question-btn"
+                    }
+                    onClick={() => editAnswer(option, item.id)}
+                  >
+                    {option.label}
+                  </button>
+                ))
               ) : (
+                // Display the previous answer and Edit icon
                 <>
                   <p className="prevA">
                     {
-                      answers[item.id]?"YES":"NO"
+                      quizQuestions[item.id].options.find(
+                        (option) => option.value === item.selected
+                      ).label
                     }
                     <EditNoteIcon
                       className="btn--edit"
                       onClick={() => reAnswer(item.id)}
                     />
                   </p>
+                  {/* Optionally, show a Submit button when in edit mode */}
+                  {/* {editModes[item.id] && (
+                    <button
+                      className="submit-btn"
+                      onClick={() => submitEditedAnswer(item.id)}
+                    >
+                      Submit
+                    </button>
+                  )} */}
                 </>
               )}
             </div>
@@ -128,7 +141,7 @@ function Questions(props) {
           </h3>
           </div>
           <div className="option-buttons">
-            {/* {currentQuestion.options.map((option, index) => (
+            {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
                 className={
@@ -140,13 +153,7 @@ function Questions(props) {
               >
                 {option.label}
               </button>
-            ))} */}
-            <button className="Question-btn" onClick={() => handleClick(true)}>
-              YES
-            </button>
-            <button className="Question-btn" onClick={() => handleClick(false)}>
-              NO
-            </button>
+            ))}
           </div>
         </section>
       </div>
