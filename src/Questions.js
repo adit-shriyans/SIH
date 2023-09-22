@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import TextField from '@mui/material/TextField';
 import QuestionSet from "./QuestionSet";
+import logo from "./assets/logoNew.png";
 import "./App.css";
+import "./Questions.css"
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -118,7 +120,12 @@ function Questions(props) {
       </section>
       <div className="container">
         <section className="Question-btns">
-          <h3 className="Question-1">{currentQuestion.question}</h3>
+          <div className="QuestionWithImg">
+          <img src={logo} className="logo"/>
+          <h3 className="Question-1">
+            {currentQuestion.question}
+          </h3>
+          </div>
           <div className="option-buttons">
             {currentQuestion.options.map((option, index) => (
               <button

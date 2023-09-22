@@ -79,10 +79,6 @@ button {
   cursor: pointer;
 }
 
-.Question-1 {
-  padding-bottom: 20px;
-}
-
 .Question-btn {
   background: white;
   padding: 15px 40px;
@@ -234,6 +230,14 @@ button {
 
 .Question-1 {
   width: 530px;
+  height: 2rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 0 5px;
 }
 
 .Questions {

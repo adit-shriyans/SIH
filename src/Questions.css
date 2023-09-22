@@ -1,0 +1,14 @@
+.logo{
+    height:3rem;
+    width:3rem;
+    /* margin-top: 3%;
+    padding: 3%; */
+    margin-right: 2%;
+    border-radius:0.8rem; 
+}
+
+.QuestionWithImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
