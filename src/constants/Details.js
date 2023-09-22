@@ -1,6 +1,4 @@
-// constants/prakritiDetails.js
-
-const prakritiDetails = {
+const Details = {
     Vata: {
       name: "Vata",
       description:
@@ -60,5 +58,5 @@ const prakritiDetails = {
     },
   };
   
-  export default prakritiDetails;
+  export default Details;
   
