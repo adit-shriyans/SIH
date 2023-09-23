@@ -5,6 +5,20 @@ import QuestionSet from "./constants/questionSetPrompt";
 import logo from "./assets/logoNew.png";
 import "./App.css";
 import "./Questions.css"
+import axios from "axios";
+
+const apiUrl = 'https://example.com/api/resource';
+
+var prakriti;
+
+axios.get(apiUrl)
+      .then(response => {
+        console.log('Response:', response.data);
+        prakriti = response.data;
+      })
+      .catch(error =>{
+        console.log("Error:", error)
+});      
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -94,7 +108,7 @@ function Questions(props) {
             </p>
             <div className="ans-div">
               {editModes[item.id] ? (
-                
+
                 // quizQuestions[item.id].options.map((option, index) => (
                 //   <button
                 //     key={index}

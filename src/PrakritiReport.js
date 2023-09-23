@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './Navbar'
 import "./PrakritiReport.css"
 import PrakritiBorder from "./assets/dec.png"
-import Details from './constants/Details';
 
 const PrakritiReport = ({prakriti,content}) => {
   return (
