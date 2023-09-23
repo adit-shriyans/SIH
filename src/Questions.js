@@ -5,6 +5,20 @@ import QuestionSet from "./constants/questionSetPrompt";
 import logo from "./assets/logoNew.png";
 import "./App.css";
 import "./Questions.css"
+import axios from "axios";
+
+const apiUrl = 'https://example.com/api/resource';
+
+var prakriti;
+
+axios.get(apiUrl)
+      .then(response => {
+        console.log('Response:', response.data);
+        prakriti = response.data;
+      })
+      .catch(error =>{
+        console.log("Error:", error)
+});      
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -68,8 +82,12 @@ function Questions(props) {
     const newEditModes = [...editModes];
     const newAnswers = [...answers];
     const newHistory = [...history];
-    newAnswers[id] = option.value;
-    newHistory[id] = {id: id, selected: newAnswers[id]};
+    newAnswers[id] = option;
+    newHistory[id] = {id:id, selected: newAnswers[id]?"YES":"NO" }
+    console.log(answers);
+    console.log(newAnswers);
+    console.log(newHistory);
+    answers[id]=option.value;
     newEditModes[id] = false;
     setEditModes(newEditModes);
     setAnswers(newAnswers);
@@ -154,6 +172,12 @@ function Questions(props) {
                 {option.label}
               </button>
             ))}
+            {/* <button className="Question-btn" onClick={() => handleClick(true)}>
+              YES
+            </button>
+            <button className="Question-btn" onClick={() => handleClick(false)}>
+              NO
+            </button> */}
           </div>
         </section>
       </div>

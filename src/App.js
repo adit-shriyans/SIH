@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import Questions from "./Questions";
 import Result from "./Result";
 import PrakritiReport from "./PrakritiReport";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
     <div className="App">
       <Navbar />
     {output}
+    {/* <PrakritiReport prakriti='Vata' content='Hi I am Vata'/> */}
     </div>
   );
 }

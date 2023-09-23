@@ -4,18 +4,18 @@ import "./PrakritiReport.css"
 import PrakritiBorder from "./assets/dec.png"
 import Details from './constants/Details';
 
-const PrakritiReport = () => {
+const PrakritiReport = ({prakriti,content}) => {
   return (
     <div>
         {/* <Navbar /> */}
         <section className='Report'>
             <div className='PrakritiContainer'>
                  <img src={PrakritiBorder} className='PrakritiBorder'></img>   
-                 <h1 className='PrakritiName'>Vata</h1>
+                 <h1 className='PrakritiName'>{prakriti}</h1>
             </div>
             <div className='Report-details-div'>
                 <p className='Report-details-text'>
-                    Hi I am Text.
+                    {content}
                 </p>
             </div>
             <div className='Recommendation-div'>
