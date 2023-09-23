@@ -1,4 +1,4 @@
-const questionsData = [
+export default [
   {
     id: 0,
     question: "What is your gender?",

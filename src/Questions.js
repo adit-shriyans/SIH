@@ -69,8 +69,8 @@ function Questions(props) {
   }
 
   function handleClick(option) {
-    setSelected(option?"YES":"NO");
-    setAnswers([...answers, option]);
+    setSelected(option);
+    setAnswers([...answers,option.value]);
   }
 
   const reAnswer = (questionId) => {
@@ -88,7 +88,7 @@ function Questions(props) {
     console.log(answers);
     console.log(newAnswers);
     console.log(newHistory);
-    // answers[id]=option.value;
+    answers[id]=option.value;
     newEditModes[id] = false;
     setEditModes(newEditModes);
     setAnswers(newAnswers);
@@ -135,10 +135,10 @@ function Questions(props) {
                 <>
                   <p className="prevA">
                     {
-                      // quizQuestions[item.id].options.find(
-                      //   (option) => option === item.selected
-                      // ).label
-                      answers[item.id]?"YES":"NO"
+                       quizQuestions[item.id].options.find(
+                         (option) => option === item.selected
+                      ).label
+                      //answers[item.id]?"YES":"NO"
                     }
                     <EditNoteIcon
                       className="btn--edit"
@@ -169,7 +169,7 @@ function Questions(props) {
           </h3>
           </div>
           <div className="option-buttons">
-            {/* {currentQuestion.options.map((option, index) => (
+            {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
                 className={
@@ -181,13 +181,13 @@ function Questions(props) {
               >
                 {option.label}
               </button>
-            ))} */}
-            <button className="Question-btn" onClick={() => handleClick(true)}>
+            ))}
+            {/* <button className="Question-btn" onClick={() => handleClick(true)}>
               YES
             </button>
             <button className="Question-btn" onClick={() => handleClick(false)}>
               NO
-            </button>
+            </button> */}
           </div>
         </section>
       </div>
