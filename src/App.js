@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-    {output}
-    {/* <PrakritiReport /> */}
+      {/* <Navbar />
+    {output} */}
+    <PrakritiReport prakriti='Vata' content='Hi I am Vata'/>
     </div>
   );
 }
