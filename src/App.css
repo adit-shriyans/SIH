@@ -52,7 +52,7 @@ button {
 }
 
 .intro-copy {
-  background: #4b5395;
+  background: #a4cdb0;
   margin: 20px;
   padding: 20px;
   border-radius: 24px;
@@ -64,10 +64,10 @@ button {
 }
 
 .quiz-btn {
-  background: rgb(214, 91, 166);
-  background: linear-gradient(198deg,
+  background: #d6d6ab;
+  /* background: linear-gradient(198deg,
       rgba(214, 91, 166, 1) 19%,
-      rgba(195, 111, 220, 1) 91%);
+      rgba(195, 111, 220, 1) 91%); */
   border: 0;
   padding: 15px 40px;
   margin: 20px;
@@ -98,10 +98,10 @@ button {
 
 .Question-btn:active,
 .Question-btn-selected {
-  background: #00a79d;
-  background: linear-gradient(198deg,
-  #00a79d 19%,
-  #93efa2 91%);
+  background: #d1d1b7;
+  /* background: linear-gradient(198deg,
+      rgba(214, 91, 166, 1) 19%,
+      rgba(108, 207, 246, 1) 91%); */
   color: white;
 }
 
