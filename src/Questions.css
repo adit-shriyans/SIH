@@ -12,3 +12,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.options-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* width:max-content; */
+    /* align-items: center; */
+}
