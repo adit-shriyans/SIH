@@ -74,10 +74,9 @@ function App() {
   // .catch((error) => {
   //     console.error('Error:', error);
   //   });
-  console.log(results);
   if(jsonString.length>2){
   axios
-  .post("http://localhost:8000", jsonString, {
+  .post("https://prakriti.onrender.com", jsonString, {
     headers: {
       "Content-Type": "application/json",
     },

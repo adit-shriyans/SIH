@@ -444,20 +444,6 @@ export default [
       { label: "Wrinkled", value: 1 },
     ],
   },
-//   {
-//     id: 50,
-//     questions: "Why are you gay?",
-//     options: [
-//         {
-//             label: "I'm not gay",
-//             value: 1
-//         },
-//         {
-//             label: "I'm on medication",
-//             value: 0
-//         }
-//     ]
-//   },
 ];
 
 
