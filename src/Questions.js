@@ -12,13 +12,13 @@ const apiUrl = 'https://example.com/api/resource';
 var prakriti;
 
 axios.get(apiUrl)
-      .then(response => {
-        console.log('Response:', response.data);
-        prakriti = response.data;
-      })
-      .catch(error =>{
-        console.log("Error:", error)
-});      
+  .then(response => {
+    console.log('Response:', response.data);
+    prakriti = response.data;
+  })
+  .catch(error => {
+    console.log("Error:", error)
+  });
 
 function Questions(props) {
   const quizQuestions = QuestionSet;
@@ -35,9 +35,9 @@ function Questions(props) {
     }
   }, [selected]);
 
-  useEffect(() => {
-    props.setResults(answers);
-  }, [answers]);
+  // useEffect(() => {
+  //   props.setResults(answers);
+  // }, [answers]);
 
   useEffect(() => {
     scrollToBottom();
@@ -53,12 +53,18 @@ function Questions(props) {
   };
 
   function nextClick() {
+    // setHistory([...history, { id, selected }]);
+    // setSelected(null);
+    // setId(id + 1);
     if (selected === null) {
       return;
     }
     if (id + 1 > quizQuestions.length - 1) {
       props.setAppState("result");
-      props.setResults(history);
+      setHistory([...history, { id, selected }]);
+      setId(id + 1);
+      setSelected(null);
+      props.setResults([...history, {id: answers.length-1, selected: answers[id]}]);
       return;
     }
 
@@ -68,8 +74,10 @@ function Questions(props) {
   }
 
   function handleClick(option) {
-    setSelected(option.value);
     setAnswers([...answers, option.value]);
+    setSelected(option.value);
+    // setAnswers([...answers, option.value]);
+    // setHistory([...history, { id, selected }]);
   }
 
   const reAnswer = (questionId) => {
@@ -83,11 +91,11 @@ function Questions(props) {
     const newAnswers = [...answers];
     const newHistory = [...history];
     newAnswers[id] = option;
-    newHistory[id] = {id:id, selected: newAnswers[id]?"YES":"NO" }
+    newHistory[id] = { id: id, selected: newAnswers[id] ? "YES" : "NO" }
     console.log(answers);
     console.log(newAnswers);
     console.log(newHistory);
-    answers[id]=option.value;
+    answers[id] = option.value;
     newEditModes[id] = false;
     setEditModes(newEditModes);
     setAnswers(newAnswers);
@@ -99,44 +107,44 @@ function Questions(props) {
   return (
     <div className="Questions">
       <div className="question-container">
-      <section className="history" ref={scrollableRef}>
-        {history.map((item, index) => (
-          <div key={index} className="history-item">
-            <p className="prevQ">
-              {quizQuestions.find((itm) => itm.id === item.id).question}
-            </p>
-            <div className="ans-div">
-              {editModes[item.id] ? (
-                // Display options for editing the answer
-                quizQuestions[item.id].options.map((option, index) => (
-                  <button
-                    key={index}
-                    className={
-                      selected === option.value
-                        ? "Question-btn-selected Question-btn"
-                        : "Question-btn"
-                    }
-                    onClick={() => editAnswer(option, item.id)}
-                  >
-                    {option.label}
-                  </button>
-                ))
-              ) : (
-                // Display the previous answer and Edit icon
-                <>
-                  <p className="prevA">
-                    {
-                      quizQuestions[item.id].options.find(
-                        (option) => option.value === item.selected
-                      ).label
-                    }
-                    <EditNoteIcon
-                      className="btn--edit"
-                      onClick={() => reAnswer(item.id)}
-                    />
-                  </p>
-                  {/* Optionally, show a Submit button when in edit mode */}
-                  {/* {editModes[item.id] && (
+        <section className="history" ref={scrollableRef}>
+          {history.map((item, index) => (
+            <div key={index} className="history-item">
+              <p className="prevQ">
+                {quizQuestions.find((itm) => itm.id === item.id).question}
+              </p>
+              <div className="ans-div">
+                {editModes[item.id] ? (
+                  // Display options for editing the answer
+                  quizQuestions[item.id].options.map((option, index) => (
+                    <button
+                      key={index}
+                      className={
+                        selected === option.value
+                          ? "Question-btn-selected Question-btn"
+                          : "Question-btn"
+                      }
+                      onClick={() => editAnswer(option, item.id)}
+                    >
+                      {option.label}
+                    </button>
+                  ))
+                ) : (
+                  // Display the previous answer and Edit icon
+                  <>
+                    <p className="prevA">
+                      {
+                        quizQuestions[item.id].options.find(
+                          (option) => option.value === item.selected
+                        ).label
+                      }
+                      <EditNoteIcon
+                        className="btn--edit"
+                        onClick={() => reAnswer(item.id)}
+                      />
+                    </p>
+                    {/* Optionally, show a Submit button when in edit mode */}
+                    {/* {editModes[item.id] && (
                     <button
                       className="submit-btn"
                       onClick={() => submitEditedAnswer(item.id)}
@@ -144,47 +152,47 @@ function Questions(props) {
                       Submit
                     </button>
                   )} */}
-                </>
-              )}
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
-      </section>
-      <div className="container">
-        <section className="Question-btns">
-          <div className="QuestionWithImg">
-          <img src={logo} className="logo"/>
-          <h3 className="Question-1">
-            {currentQuestion.question}
-          </h3>
-          </div>
-          <div className="option-buttons">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                className={
-                  selected === option.value
-                    ? "Question-btn-selected Question-btn"
-                    : "Question-btn"
-                }
-                onClick={() => handleClick(option)}
-              >
-                {option.label}
-              </button>
-            ))}
-            {/* <button className="Question-btn" onClick={() => handleClick(true)}>
+          ))}
+        </section>
+        <div className="container">
+          <section className="Question-btns">
+            <div className="QuestionWithImg">
+              <img src={logo} className="logo" />
+              <h3 className="Question-1">
+                {currentQuestion.question}
+              </h3>
+            </div>
+            <div className="option-buttons">
+              {currentQuestion.options.map((option, index) => (
+                <button
+                  key={index}
+                  className={
+                    selected === option.value
+                      ? "Question-btn-selected Question-btn"
+                      : "Question-btn"
+                  }
+                  onClick={() => handleClick(option)}
+                >
+                  {option.label}
+                </button>
+              ))}
+              {/* <button className="Question-btn" onClick={() => handleClick(true)}>
               YES
             </button>
             <button className="Question-btn" onClick={() => handleClick(false)}>
               NO
             </button> */}
-          </div>
-        </section>
-      </div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );
-  
+
 }
 
 export default Questions;
