@@ -92,7 +92,7 @@ button {
   font-weight: 500;
   width: 90%;
   border: 0;
-  width: calc(33.33% - 40px); /* Adjust the width to make 3 buttons per row with some spacing */
+  width: fit-content;
   margin: 10px;
 }
 

@@ -21,9 +21,9 @@ function Questions(props) {
     }
   }, [selected]);
 
-  useEffect(() => {
-    props.setResults(answers);
-  }, [answers]);
+  // useEffect(() => {
+  //   props.setResults(answers);
+  // }, [answers]);
 
   useEffect(() => {
     scrollToBottom();

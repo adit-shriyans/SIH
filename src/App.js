@@ -28,6 +28,7 @@ function App() {
   }
 
   const jsonString = JSON.stringify(outputs);
+  console.log(jsonString);
 
   // "https://prakriti.onrender.com"
   // "http://localhost:8000"
