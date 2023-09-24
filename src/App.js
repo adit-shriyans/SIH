@@ -33,7 +33,7 @@ function App() {
   // "http://localhost:8000"
   if (jsonString.length > 2) {
     axios
-      .post("http://localhost:8000", jsonString, {
+      .post("https://prakriti.onrender.com", jsonString, {
         headers: {
           "Content-Type": "application/json",
         },
