@@ -92,14 +92,16 @@ button {
   font-weight: 500;
   width: 90%;
   border: 0;
+  width: calc(33.33% - 40px); /* Adjust the width to make 3 buttons per row with some spacing */
+  margin: 10px;
 }
 
 .Question-btn:active,
 .Question-btn-selected {
-  background: rgb(214, 91, 166);
+  background: #00a79d;
   background: linear-gradient(198deg,
-      rgba(214, 91, 166, 1) 19%,
-      rgba(108, 207, 246, 1) 91%);
+  #00a79d 19%,
+  #93efa2 91%);
   color: white;
 }
 
@@ -276,6 +278,9 @@ button {
 
 .option-buttons {
   position: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: ; */
 }
 
 @media (min-width: 992px) {
@@ -286,9 +291,9 @@ button {
     align-items: center;
   }
 
-  .Question-btn {
-    width: 100%;
-  }
+  /* .Question-btn {
+    width: 950px;
+  } */
 }
 
 @font-face {
