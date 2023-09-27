@@ -17,6 +17,7 @@ button {
   background: url("../photos/bg5.avif");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: Helvetica, sans-serif;
 }
 
 /* .Questions {
@@ -48,7 +49,7 @@ button {
 
 .intro-header h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   -webkit-text-stroke: 1px black;
 }
 
@@ -85,7 +86,7 @@ button {
   background: #E4E4D0;
   padding: 15px 40px;
   margin: 20px;
-  border-radius: 24px;
+  border-radius: 8px;
   text-align: center;
   color: #383d6e;
   font-size: 1rem;
@@ -95,7 +96,7 @@ button {
   border: 0;
   width: fit-content;
   margin: 10px;
-  border: 1px solid black;
+  border: 2px solid #6a9a74;
 }
 
 .Question-btn:active,
@@ -205,9 +206,9 @@ button {
   color: black;
   width: 400px;
   background-color: #fff;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 0.3rem;
-  border: 1px solid black;
+  border: 2px solid #88c294;
   align-self: flex-start;
 }
 
@@ -224,11 +225,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 0.3rem 1rem;
   align-self: flex-end;
   margin-top: 10%;
-  border: 1px solid black;
+  border: 2px solid #6a9a74;
 }
 
 .prevA:hover .btn--edit {
@@ -258,8 +259,8 @@ button {
   display: flex;
   align-items: center;
   background-color: #fff;
-  border-radius: 20px;
-  border: 1px solid black;
+  border-radius: 8px;
+  border: 2px solid #88c294;
   padding: 0.25rem 5px;
 }
 
