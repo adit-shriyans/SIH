@@ -38,7 +38,8 @@ button {
 
 .container {
   margin: 0 auto;
-  padding-top: 20px;
+  position: relative;
+  top: 3.8rem;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -48,7 +49,7 @@ button {
 .intro-header h1 {
   text-align: center;
   font-size: 2rem;
-  -webkit-text-stroke: 1px black ;
+  -webkit-text-stroke: 1px black;
 }
 
 .intro-copy {
@@ -94,11 +95,13 @@ button {
   border: 0;
   width: fit-content;
   margin: 10px;
+  border: 1px solid black;
 }
 
 .Question-btn:active,
 .Question-btn-selected {
   background: #d1d1b7;
+  border: 1px solid black;
   /* background: linear-gradient(198deg,
       rgba(214, 91, 166, 1) 19%,
       rgba(108, 207, 246, 1) 91%); */
@@ -188,11 +191,11 @@ button {
 .history {
   max-height: 60vh;
   overflow-y: auto;
-  width: 100%; 
-  height: calc(100vh - 440px);
+  width: 100%;
+  height: calc(100vh - 420px);
 }
 
-.history-item{
+.history-item {
   display: flex;
   justify-content: flex-start;
 
@@ -204,6 +207,7 @@ button {
   background-color: #fff;
   border-radius: 50px;
   padding: 0.3rem;
+  border: 1px solid black;
   align-self: flex-start;
 }
 
@@ -224,6 +228,7 @@ button {
   padding: 0.3rem 1rem;
   align-self: flex-end;
   margin-top: 10%;
+  border: 1px solid black;
 }
 
 .prevA:hover .btn--edit {
@@ -236,6 +241,10 @@ button {
   right: 0;
   opacity: 1;
   cursor: pointer;
+}
+
+.btn--edit:hover {
+  transform: scale(1.3);
 }
 
 .textfield {
@@ -264,8 +273,9 @@ button {
 
 .question-container {
   max-width: 800px;
+  height: 80vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .heading {
@@ -287,6 +297,8 @@ button {
 @media (min-width: 992px) {
   .container {
     width: 60%;
+    position: relative;
+    top: 3.79rem;
     display: flex;
     flex-direction: column;
     align-items: center;

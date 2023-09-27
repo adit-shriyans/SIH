@@ -27,7 +27,6 @@ function Questions(props) {
 
   const scrollableRef = useRef(null);
 
-  // Function to scroll to the bottom of the scrollable element
   const scrollToBottom = () => {
     if (scrollableRef.current) {
       scrollableRef.current.scrollTop = scrollableRef.current.scrollHeight;
@@ -88,7 +87,6 @@ function Questions(props) {
             </p>
             <div className="ans-div">
               {editModes[item.id] ? (
-                // Display options for editing the answer
                 quizQuestions[item.id].options.map((option, index) => (
                   <button
                     key={index}
@@ -103,7 +101,6 @@ function Questions(props) {
                   </button>
                 ))
               ) : (
-                // Display the previous answer and Edit icon
                 <>
                   <p className="prevA">
                     {
