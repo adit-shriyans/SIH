@@ -60,6 +60,7 @@ button {
 
 .intro-copy p {
   font-size: 1rem;
+  color: black;
   text-align: left;
 }
 
@@ -73,7 +74,7 @@ button {
   margin: 20px;
   border-radius: 24px;
   text-align: center;
-  color: white;
+  color: black;
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: 500;
